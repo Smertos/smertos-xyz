@@ -9,28 +9,7 @@ import {
     mdiTwitter
 } from '@mdi/js';
 import React, { Component } from 'react';
-import styled from 'styled-components';
-
-const LandingProfileSocialWrapper = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: 0 11.5em;
-`;
-
-const LandingProfileSocialButton = styled.button<{ fill: string }>`
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    fill: #ddd;
-    cursor: pointer;
-    
-    &:hover {
-        fill: ${props => props.fill};
-    }
-`;
+import { LandingProfileSocialLink, LandingProfileSocialWrapper } from './landing-profile-social.styled';
 
 const iconLinks = [
     { icon: mdiTwitch, url: 'https://www.twitch.tv/smertos', fill: 'blueviolet' }, // TODO: fill-in fill colors
@@ -48,9 +27,9 @@ export function LandingProfileSocial() {
             {
                 iconLinks.map(
                     link => (
-                        <LandingProfileSocialButton fill={link.fill} onClick={() => void (location.href = link.url)} key={link.icon}>
+                        <LandingProfileSocialLink fill={link.fill} href={link.url} key={link.icon}>
                             <Icon path={link.icon} size={1.25} />
-                        </LandingProfileSocialButton>
+                        </LandingProfileSocialLink>
                     )
                 )
             }
