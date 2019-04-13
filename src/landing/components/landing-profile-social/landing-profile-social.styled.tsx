@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LandingProfileSocialLink = styled.a.attrs<{ fill: string }>({ target: '_blank' })`
+export const LandingProfileSocialLink = styled.a<{ fill: string }>`
     width: 30px;
     height: 30px;
     padding: 0;
