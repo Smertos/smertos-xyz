@@ -54,13 +54,15 @@ export class LandingProfileInfo extends Component {
 
         return (
             <LandingProfileInfoWrapper>
-                <LandingProfileName ref={this.nameRef}>
-                    {name}
-                    <LandingProfileNamePhantom ref={this.name2Ref}>{name}</LandingProfileNamePhantom>
-                </LandingProfileName>
+                <div>
+                    <LandingProfileName ref={this.nameRef}>
+                        {name}
+                        <LandingProfileNamePhantom ref={this.name2Ref}>{name}</LandingProfileNamePhantom>
+                    </LandingProfileName>
 
-                <LandingProfileNameDivider></LandingProfileNameDivider>
-                <LandingProfileUserName>@{userName}</LandingProfileUserName>
+                    <LandingProfileNameDivider></LandingProfileNameDivider>
+                    <LandingProfileUserName>@{userName}</LandingProfileUserName>
+                </div>
 
                 <LandingProfileQuickDescription>{description}</LandingProfileQuickDescription>
             </LandingProfileInfoWrapper>

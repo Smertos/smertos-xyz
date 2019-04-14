@@ -8,8 +8,24 @@ import styled from 'styled-components';
 const LandingProfileContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 44rem;
+    align-content: center;
+    justify-content: center;
     margin: 8rem auto;
+    
+    @media (max-width: 640px) {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        font-size: 0.75rem;
+    }
+`;
+
+const LandingProfileGeneralWrapper = styled.div`
+    margin: 0.75em 1.25em;
+    
+    @media (max-width: 640px) {
+        margin: 2em 1.25em;
+    }
 `;
 
 export class LandingProfile extends Component {
@@ -19,13 +35,15 @@ export class LandingProfile extends Component {
             <LandingProfileContainer>
                 <LandingProfileAvatar src={landingAvatar} />
                 
-                <LandingProfileInfo
-                    name="Mikhail Vedernikov"
-                    userName="Smertos"
-                    description="Full-stack JS Developer"
-                />
+                <LandingProfileGeneralWrapper>
+                    <LandingProfileInfo
+                        name="Mikhail Vedernikov"
+                        userName="Smertos"
+                        description="Full-stack JS Developer"
+                    />
                     
-                <LandingProfileSocial />
+                    <LandingProfileSocial />
+                </LandingProfileGeneralWrapper>
             </LandingProfileContainer>
         );
     }

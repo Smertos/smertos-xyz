@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const LandingProfileInfoWrapper = styled.div`
-    flex: 1;
-    margin: 1.9rem 0 1rem 1.25em;
-    font-size: 2.5rem;
+    font-size: 2em;
 `;
 
 export const LandingProfileName = styled.span`
@@ -15,6 +13,7 @@ export const LandingProfileNamePhantom = styled.span`
     position: absolute;
     top: 0;
     left: 0;
+    user-select: none;
 `;
 
 export const LandingProfileNameDivider = styled.span`
