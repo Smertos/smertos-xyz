@@ -1,4 +1,5 @@
-dist/
+dist
 *.log
 node_modules
 .pnp*
+.vscode
