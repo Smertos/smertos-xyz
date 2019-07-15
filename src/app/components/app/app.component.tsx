@@ -8,6 +8,7 @@ const AppContainer = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 `;
 
 export class App extends Component {

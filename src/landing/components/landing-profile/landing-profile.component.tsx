@@ -10,7 +10,8 @@ const LandingProfileContainer = styled.div`
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    margin: 8rem auto;
+    margin: 128px auto 0;
+    margin: 25vh auto 0;
     
     @media (max-width: 640px) {
         display: flex;
