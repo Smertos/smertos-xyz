@@ -1,23 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-interface ImageProps {
-    height: number;
+type TImageProps = {
+    loading?: 'lazy';
     src: string;
-    width: number;
-}
+};
 
-const ImageContainer = styled.img``;
-
-export class Image extends Component {
-
-    props: ImageProps;
-
-    render(): JSX.Element {
-        return (
-            <ImageContainer {...this.props} />
-        );
-    }
-
-}
- 
+export const Image = styled.img<TImageProps>``;

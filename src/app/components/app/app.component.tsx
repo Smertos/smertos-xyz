@@ -1,6 +1,6 @@
-import { GlobalStyles } from 'app/components/global-styles';
-import { Router } from 'app/components/router';
-import React, { Component } from 'react';
+import { AppRouter } from 'app/components/app-router';
+import { AppStyles } from 'app/components/app-styles';
+import React from 'react';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
@@ -11,15 +11,11 @@ const AppContainer = styled.div`
     overflow-x: hidden;
 `;
 
-export class App extends Component {
-
-    render(): JSX.Element {
-        return (
-            <AppContainer>
-                <GlobalStyles />
-                <Router />
-            </AppContainer>
-        );
-    }
-
+export function App(): JSX.Element {
+    return (
+        <AppContainer>
+            <AppStyles />
+            <AppRouter />
+        </AppContainer>
+    );
 }

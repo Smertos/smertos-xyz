@@ -1,1 +1,1 @@
-export { LandingProfileSocial } from './landing-profile-social.component';
+export * from './landing-profile-social.component';

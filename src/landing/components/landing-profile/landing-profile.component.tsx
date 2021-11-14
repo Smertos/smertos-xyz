@@ -1,8 +1,8 @@
+import landingAvatar from 'assets/images/the-big-guy.jpg';
 import { LandingProfileAvatar } from 'landing/components/landing-profile-avatar';
 import { LandingProfileInfo } from 'landing/components/landing-profile-info';
 import { LandingProfileSocial } from 'landing/components/landing-profile-social';
-import landingAvatar from 'landing/images/me.jpg';
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const LandingProfileContainer = styled.div`
@@ -12,42 +12,39 @@ const LandingProfileContainer = styled.div`
     justify-content: center;
     margin: 128px auto 0;
     margin: 25vh auto 0;
-    
+
     @media (max-width: 640px) {
         display: flex;
         flex-direction: column;
         width: auto;
+        padding: 0 2em;
         font-size: 0.75rem;
     }
 `;
 
 const LandingProfileGeneralWrapper = styled.div`
     margin: 0.75em 1.25em;
-    
+
     @media (max-width: 640px) {
         margin: 2em 1.25em;
     }
 `;
 
-export class LandingProfile extends Component {
+export function LandingProfile(): JSX.Element {
+    return (
+        <LandingProfileContainer>
+            <LandingProfileAvatar loading="lazy" src={landingAvatar} />
 
-    render(): JSX.Element {
-        return (
-            <LandingProfileContainer>
-                <LandingProfileAvatar src={landingAvatar} />
-                
-                <LandingProfileGeneralWrapper>
-                    <LandingProfileInfo
-                        name="Mikhail Vedernikov"
-                        userName="Smertos"
-                        description="Full-stack JS Developer"
-                    />
-                    
-                    <LandingProfileSocial />
-                </LandingProfileGeneralWrapper>
-            </LandingProfileContainer>
-        );
-    }
+            <LandingProfileGeneralWrapper>
+                <LandingProfileInfo
+                    description="Front-end Developer"
+                    name="Mikhail Vedernikov"
+                    userName="Smertos"
+                />
 
+                <LandingProfileSocial />
+            </LandingProfileGeneralWrapper>
+        </LandingProfileContainer>
+    );
 }
- 
+

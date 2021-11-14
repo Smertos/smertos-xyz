@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+export const AppStyles = createGlobalStyle`
     html, body, #app-root {
         width: 100vw;
         height: 100vh;
@@ -25,4 +25,4 @@ export const GlobalStyles = createGlobalStyle`
             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 `;
- 
+

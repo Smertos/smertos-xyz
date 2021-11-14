@@ -1,1 +1,1 @@
-export { LandingProfileAvatar } from './landing-profile-avatar.component';
+export * from './landing-profile-avatar.component';

@@ -8,10 +8,17 @@ import {
     mdiTwitch,
     mdiTwitter
 } from '@mdi/js';
-import React, { Component } from 'react';
+import React from 'react';
 import { LandingProfileSocialLink, LandingProfileSocialWrapper } from './landing-profile-social.styled';
 
-const iconLinks = [
+type TIcon = {
+    fill: string
+    icon: string,
+    noBlack?: boolean,
+    url: string
+};
+
+const iconLinks: Array<TIcon> = [
     { icon: mdiTwitch, url: 'https://www.twitch.tv/smertos', fill: 'blueviolet' },
     { icon: mdiGithubCircle, url: 'https://github.com/Smertos', fill: '#615d5d' },
     { icon: mdiEmail, url: 'mailto:mr.smertos@gmail.com', fill: '#e39e44', noBlack: true },
@@ -21,24 +28,20 @@ const iconLinks = [
     { icon: mdiDiscord, url: 'https://discord.gg/BrgNHWx', fill: '#7289da' }
 ];
 
-export function LandingProfileSocial() {
+export function LandingProfileSocial(): JSX.Element {
     return (
         <LandingProfileSocialWrapper>
-            {
-                iconLinks.map(
-                    link => (
-                        <LandingProfileSocialLink
-                            fill={link.fill}
-                            href={link.url}
-                            key={link.icon}
-                            rel="noopener"
-                            target={link.noBlack ? '_self' : '_black'}
-                        >
-                            <Icon path={link.icon} size={1.25} />
-                        </LandingProfileSocialLink>
-                    )
-                )
-            }
+            {iconLinks.map((link: TIcon) => (
+                <LandingProfileSocialLink
+                    fill={link.fill}
+                    href={link.url}
+                    key={link.icon}
+                    rel="noopener"
+                    target={link.noBlack ? '_self' : '_black'}
+                >
+                    <Icon path={link.icon} size={1.25} />
+                </LandingProfileSocialLink>
+            ))}
         </LandingProfileSocialWrapper>
     );
 }

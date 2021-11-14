@@ -17,17 +17,35 @@ export const LandingProfileNamePhantom = styled.span`
 `;
 
 export const LandingProfileNameDivider = styled.span`
-    margin: 0 0.25em;
+    margin: 0 .75rem;
     border: 1px solid #8c8d89;
-    vertical-align: middle;
+    font-size: 1rem;
+    vertical-align: baseline;
+
+    @media (max-width: 420px) {
+        display: none;
+    }
 `;
 
 export const LandingProfileQuickDescription = styled.div`
     font-size: 0.65em;
+    color: rgba(220, 220, 220, 0.75);
+
+    @media (max-width: 720px) {
+        margin-top: 0.25rem;
+    }
+
+    @media (max-width: 420px) {
+        margin-top: 0.5rem;
+    }
 `;
 
 export const LandingProfileUserName = styled.span`
-    font-size: 0.75em;
+    font-size: 1.25rem;
     color: #8c8d89;
     vertical-align: middle;
+
+    @media (max-width: 420px) {
+        display: block;
+    }
 `;

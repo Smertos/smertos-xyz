@@ -1,1 +1,1 @@
-export { LandingProfile } from './landing-profile.component';
+export * from './landing-profile.component';
