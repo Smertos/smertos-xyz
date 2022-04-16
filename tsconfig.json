@@ -8,9 +8,9 @@
             "ES7",
             "ESNext"
         ],
-        "module": "commonjs",
+        "module": "esnext",
         "moduleResolution": "node",
-        "target": "es5",
+        "target": "es6",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "emitDecoratorMetadata": true,

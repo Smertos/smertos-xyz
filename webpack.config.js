@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const FaviconPlugin = require('favicons-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const root = (...args) => resolve(__dirname, ...args);
 const isProduction = process.env.BUILD_ENV === 'production';
@@ -13,7 +14,7 @@ module.exports = {
 
     output: {
         path: root('dist/'),
-        filename: isProduction ? 'app.[contenthash].js' : 'app.js'
+        filename: isProduction ? '[name].[contenthash].js' : '[name].js'
     },
 
     plugins: [
@@ -37,7 +38,7 @@ module.exports = {
             logo: root('src/assets/images/favicon.png'),
             persistentCache: !isProduction,
             prefix: isProduction ? 'assets/images/icons/[hash]-' : 'assets/images/icons/',
-            title: 'Smertos the Developer',
+            title: 'The Coditian',
         })
     ],
 
@@ -56,6 +57,30 @@ module.exports = {
                 }
             }
         ]
+    },
+
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                uglifyOptions: {
+                    compress: true,
+                    ecma: 6,
+                    mangle: true
+                },
+                sourceMap: true
+            })
+        ],
+        splitChunks: {
+            cacheGroups: {
+                common: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'initial'
+                }
+            }
+        }
     },
 
     resolve: {
