@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const LandingProfileSocialLink = styled.a<{ fill: string }>`
+type LandingProfileSocialLinkProps = { fill: string };
+
+export const LandingProfileSocialLink = styled.a<LandingProfileSocialLinkProps>`
     width: 30px;
     height: 30px;
     padding: 0.25em;
@@ -11,7 +13,7 @@ export const LandingProfileSocialLink = styled.a<{ fill: string }>`
     cursor: pointer;
 
     &:hover, &:active {
-        fill: ${props => props.fill};
+        fill: ${(props: LandingProfileSocialLinkProps) => props.fill};
     }
 `;
 
