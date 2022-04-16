@@ -1,6 +1,5 @@
 import Icon from '@mdi/react';
 import {
-    mdiDiscord,
     mdiGithubCircle,
     mdiLinkedinBox,
     mdiEmail,
@@ -19,13 +18,12 @@ type TIcon = {
 };
 
 const iconLinks: Array<TIcon> = [
-    { icon: mdiTwitch, url: 'https://www.twitch.tv/smertos', fill: 'blueviolet' },
     { icon: mdiGithubCircle, url: 'https://github.com/Smertos', fill: '#615d5d' },
-    { icon: mdiEmail, url: 'mailto:mr.smertos@gmail.com', fill: '#e39e44', noBlack: true },
     { icon: mdiLinkedinBox, url: 'https://www.linkedin.com/in/smertos/', fill: '#0077b5' },
-    { icon: mdiTwitter, url: 'https://twitter.com/Smertos', fill: '#1da1f2' },
+    { icon: mdiEmail, url: 'mailto:mr.smertos@gmail.com', fill: '#e39e44', noBlack: true },
     { icon: mdiNpm, url: 'https://www.npmjs.com/~smertos', fill: '#cb0000' },
-    { icon: mdiDiscord, url: 'https://discord.gg/BrgNHWx', fill: '#7289da' }
+    { icon: mdiTwitter, url: 'https://twitter.com/Smertos', fill: '#1da1f2' },
+    { icon: mdiTwitch, url: 'https://www.twitch.tv/smertos', fill: 'blueviolet' }
 ];
 
 export function LandingProfileSocial(): JSX.Element {
