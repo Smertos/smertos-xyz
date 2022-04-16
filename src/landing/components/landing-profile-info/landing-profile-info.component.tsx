@@ -27,6 +27,10 @@ export class LandingProfileInfo extends Component<TLandingProfileInfoProps> {
     }
 
     mouseMove = (event: MouseEvent): void => {
+        if (!this.primaryNameRef.current || !this.secondaryNameRef.current) {
+            return;
+        }
+
         const { clientX, clientY } = event;
         const { bottom, height, width, left, right, top, x, y } = this.primaryNameRef.current.getBoundingClientRect() as DOMRect;
         const [halfWidth, halfHeight] = [width / 2, height / 2];
