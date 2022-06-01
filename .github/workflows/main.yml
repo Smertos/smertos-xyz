@@ -17,6 +17,9 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Install rsync
+        run: apt install rsync
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -41,5 +44,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
           REMOTE_HOST: smertos.xyz
           REMOTE_USER: smertos
-          SOURCE: $GITHUB_WORKSPACE/dist
-          TARGET: /var/www/smertos.xyz
+          SOURCE: $GITHUB_WORKSPACE/dist/**
+          TARGET: /var/www/smertos.xyz/
