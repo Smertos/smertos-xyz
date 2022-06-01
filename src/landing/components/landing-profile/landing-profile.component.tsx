@@ -33,7 +33,7 @@ const LandingProfileGeneralWrapper = styled.div`
 export function LandingProfile(): JSX.Element {
     return (
         <LandingProfileContainer>
-            <LandingProfileAvatar loading="lazy" src={landingAvatar} />
+            <LandingProfileAvatar loading="eager" src={landingAvatar} />
 
             <LandingProfileGeneralWrapper>
                 <LandingProfileInfo

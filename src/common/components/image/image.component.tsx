@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 type TImageProps = {
-    loading?: 'lazy';
+    loading?: 'eager' | 'lazy';
     src: string;
 };
 
