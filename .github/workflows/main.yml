@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+        matrix:
+            node-version: [16.x]
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+            node-version: ${{ matrix.node-version }}
+
+      - name: Install yarn
+        run: npm i -g yarn
+
+      - name: Install dependencies
+        run: |
+          cd $GITHUB_WORKSPACE/smertos-xyz
+          yarn install
+
+      - name: Build project
+        run: |
+          cd $GITHUB_WORKSPACE/smertos-xyz
+          yarn build
+
+      - name: Deploy build
+        uses: easingthemes/ssh-deploy@v2.2.11
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+          REMOTE_HOST: smertos.xyz
+          REMOTE_USER: smertos
+          SOURCE: $GITHUB_WORKSPACE/smertos-xyz/dist
+          TARGET: /var/www/smertos.xyz
