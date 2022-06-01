@@ -27,7 +27,7 @@ module.exports = {
             cache: !isProduction,
             inject: true,
             logo: root('src/assets/images/favicon.png'),
-            prefix: isProduction ? 'assets/images/icons/[contenthash]-' : 'assets/images/icons/'
+            prefix: isProduction ? 'assets/images/icons/[contenthash]/' : 'assets/images/icons/'
         })
     ],
 
