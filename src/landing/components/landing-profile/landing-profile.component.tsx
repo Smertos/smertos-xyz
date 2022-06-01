@@ -1,9 +1,9 @@
+import styled from '@emotion/styled';
 import landingAvatar from 'assets/images/the-big-guy.jpg';
 import { LandingProfileAvatar } from 'landing/components/landing-profile-avatar';
 import { LandingProfileInfo } from 'landing/components/landing-profile-info';
 import { LandingProfileSocial } from 'landing/components/landing-profile-social';
 import React from 'react';
-import styled from 'styled-components';
 
 const LandingProfileContainer = styled.div`
     display: flex;

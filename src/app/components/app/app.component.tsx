@@ -1,7 +1,6 @@
+import styled from '@emotion/styled';
 import { AppRouter } from 'app/components/app-router';
-import { AppStyles } from 'app/components/app-styles';
 import React from 'react';
-import styled from 'styled-components';
 
 const AppContainer = styled.div`
     display: flex;
@@ -14,7 +13,6 @@ const AppContainer = styled.div`
 export function App(): JSX.Element {
     return (
         <AppContainer>
-            <AppStyles />
             <AppRouter />
         </AppContainer>
     );

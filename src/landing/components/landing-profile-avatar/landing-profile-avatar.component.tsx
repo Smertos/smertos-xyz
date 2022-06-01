@@ -1,6 +1,5 @@
+import styled from '@emotion/styled';
 import { Image } from 'common/components/image';
-import React from 'react';
-import styled from 'styled-components';
 
 export const LandingProfileAvatar = styled(Image)`
     height: 8em;
