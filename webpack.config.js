@@ -1,7 +1,6 @@
 const { resolve } = require('path');
 const FaviconPlugin = require('favicons-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const root = (...args) => resolve(__dirname, ...args);
 const isProduction = process.env.BUILD_ENV === 'production';
@@ -17,28 +16,18 @@ module.exports = {
         filename: isProduction ? '[name].[contenthash].js' : '[name].js'
     },
 
+    devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
+
     plugins: [
         new HTMLPlugin({
             inject: true,
             template: root('src/index.html')
         }),
         new FaviconPlugin({
-            icons: {
-                android: true,
-                appleIcon: false,
-                appleStartup: false,
-                coast: false,
-                favicons: true,
-                firefox: true,
-                opengraph: false,
-                twitter: true,
-                yandex: false,
-                windows: false
-            },
+            cache: !isProduction,
+            inject: true,
             logo: root('src/assets/images/favicon.png'),
-            persistentCache: !isProduction,
-            prefix: isProduction ? 'assets/images/icons/[hash]-' : 'assets/images/icons/',
-            title: 'The Coditian',
+            prefix: isProduction ? 'assets/images/icons/[contenthash]-' : 'assets/images/icons/'
         })
     ],
 
@@ -60,24 +49,16 @@ module.exports = {
     },
 
     optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                uglifyOptions: {
-                    compress: true,
-                    ecma: 6,
-                    mangle: true
-                },
-                sourceMap: true
-            })
-        ],
+        minimize: true,
+        runtimeChunk: {
+            name: 'manifest'
+        },
         splitChunks: {
             cacheGroups: {
-                common: {
-                    test: /[\\/]node_modules[\\/]/,
+                vendor: {
+                    chunks: 'all',
                     name: 'vendor',
-                    chunks: 'initial'
+                    test: /[\\/]node_modules[\\/]/
                 }
             }
         }
@@ -92,5 +73,5 @@ module.exports = {
         __dirname: false,
         __filename: false
     }
-    
+
 };
