@@ -27,12 +27,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd $GITHUB_WORKSPACE/smertos-xyz
+          cd $GITHUB_WORKSPACE
           yarn install
 
       - name: Build project
         run: |
-          cd $GITHUB_WORKSPACE/smertos-xyz
+          cd $GITHUB_WORKSPACE
           yarn build
 
       - name: Deploy build
@@ -41,5 +41,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
           REMOTE_HOST: smertos.xyz
           REMOTE_USER: smertos
-          SOURCE: $GITHUB_WORKSPACE/smertos-xyz/dist
+          SOURCE: $GITHUB_WORKSPACE/dist
           TARGET: /var/www/smertos.xyz
