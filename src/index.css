@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #e9e2d5;
+  background-color: #00040f;
+
+  font-family:
+    /* Safari for macOS and iOS (San Francisco) */
+    -apple-system,
+    /* Chrome < 56 for macOS (San Francisco) */
+    BlinkMacSystemFont,
+    /* Windows */
+    "Segoe UI",
+    /* Android */
+    "Roboto",
+    /* Basic web fallback */
+    "Helvetica Neue", Arial, sans-serif,
+    /* Emoji fonts */
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html, body {
+  overflow: hidden;
+}
+
+#root {
+  overflow-y: auto;
+}

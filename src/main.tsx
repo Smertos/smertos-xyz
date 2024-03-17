@@ -1,20 +1,16 @@
-import { App } from 'app/components/app';
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { setupGlobalStyles } from './global.styles';
+import ReactDOM from 'react-dom/client';
+import { App } from './app';
+import './index.css';
 
-setupGlobalStyles();
+const rootElement = document.getElementById('root');
 
-const containerRoot = document.querySelector('#app-root');
-
-if (!containerRoot) {
-    throw new Error('Render root wasn\'t created before app initialization');
+if (!rootElement) {
+  throw new Error('No root element found');
 }
 
-const root = createRoot(containerRoot);
-
-root.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-);
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
