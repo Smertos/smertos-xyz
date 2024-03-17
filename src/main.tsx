@@ -10,8 +10,6 @@ try {
   console.error('Failed to initialize PostHog', error);
 }
 
-console.debug('import.meta.env', import.meta.env);
-
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
