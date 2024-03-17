@@ -33,6 +33,8 @@ jobs:
           pnpm install
 
       - name: Build project
+        env:
+          VITE_POSTHOG_TOKEN: ${{ secrets.POSTHOG_TOKEN }}
         run: |
           pnpm run build
 
