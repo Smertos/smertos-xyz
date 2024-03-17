@@ -24,7 +24,7 @@ export function LandingProfileSocials() {
       {iconLinks.map((iconLink) => (
         <a
           className={'h-[1.875rem] w-[1.875rem] p-1 bg-transparent no-underline cursor-pointer ' + iconLink.className}
-          key={atob(iconLink.url)}
+          key={btoa(encodeURIComponent(iconLink.url))}
         >
           <Icon path={iconLink.icon} size={1.25} />
         </a>
