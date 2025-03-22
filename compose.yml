@@ -6,15 +6,15 @@ services:
     cap_add:
       - NET_ADMIN # for quic/http3
     container_name: caddy
-    network_mode: host
+    #network_mode: host
     image: caddy:2.9.1-alpine
     ports:
       - "80:80"
       - "443:443"
-      - "443:443/udp" # for quic/http3
+      - "443:443/udp"# for quic/http3
     restart: unless-stopped
     volumes:
-      - ../.caddy/config:/config
-      - ../.caddy/data:/data
+      - ./caddy/config:/config
+      - ./caddy/data:/data
       - ./caddy:/etc/caddy:ro
 

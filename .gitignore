@@ -25,3 +25,5 @@ dist-ssr
 
 # Caddy optional config extensions
 /caddy/*.Caddyfile
+/caddy/config
+/caddy/data
