@@ -1,0 +1,17 @@
+{
+    email "misha.smert@gmail.com"
+    admin off
+}
+
+
+smertos.xyz {
+    root * /srv
+
+    file_server
+    try_files {path}.html {path}
+
+    encode gzip zstd
+}
+
+
+import ./*.Caddyfile
