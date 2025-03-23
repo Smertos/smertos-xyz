@@ -7,25 +7,32 @@
   "packageManager": "pnpm@8.14.2",
   "scripts": {
     "analyze": "pnpx vite-bundle-visualizer",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "tsc && vite build && vite preview"
+    "dev": "vike dev --port 5173",
+    "build": "tsc && vike build",
+    "lint": "biome check",
+    "lint:fix": "biome check --fix --unsafe",
+    "preview": "vike preview --port 5173"
   },
   "dependencies": {
-    "@mdi/js": "7.4.47",
-    "@mdi/react": "1.6.1",
-    "autoprefixer": "10.4.21",
+    "@icons-pack/react-simple-icons": "^12.3.0",
+    "@tailwindcss/postcss": "4.0.15",
     "postcss": "8.5.3",
     "posthog-js": "1.232.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "tailwindcss": "3.4.1"
+    "tailwind-merge": "3.0.2",
+    "tailwindcss": "4.0.15",
+    "tailwindcss-motion": "1.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@tailwindcss/vite": "4.0.15",
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "@vitejs/plugin-react-swc": "3.8.1",
     "typescript": "5.8.2",
+    "vike": "0.4.226",
+    "vike-react": "0.6.1",
     "vite": "6.2.2"
   }
 }
