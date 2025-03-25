@@ -26,8 +26,8 @@ jobs:
 
       - name: Build and push image
         uses: docker/build-push-action@v6
-        env:
-          VITE_POSTHOG_TOKEN: ${{ secrets.POSTHOG_TOKEN }}
         with:
           push: true
-          tags: ghcr.io/smertos/smertos-xyz:latest
+          tags: ghcr.io/${{ github.repository_owner }}/smertos-xyz:latest
+          secrets: |
+            VITE_POSTHOG_TOKEN=POSTHOG_TOKEN
